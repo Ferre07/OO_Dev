@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+    <title>Nieuwe afdeling</title>
+</head>
+<body>
+<h3>New attraction</h3>
+<form action="/confirmattraction">
+    <p><label for="name">Name attraction:</label>
+        <input type="text" name="name" id="name">
+    </p>
+    <p><label for="duration">Duration (in sec):</label>
+        <input type="text" name="duration" id="duration">
+    </p>
+    <p><label for="photo">Photo:</label>
+        <input type="text" name="photo" id="photo">
+    </p>
+    <select name="parknumber">
+        <option value="-1">In which theme park?</option>
+        <option th:each="themepark : ${themeparks}" th:text="${themepark.getName()}"
+                th:value="${themeparkStat.index}"/>
+    </select>
+    <p>
+        <select name="employeenumber">
+            <option value="-1">Who is responsible for this attraction?</option>
+            <option th:each="staffmember : ${staffmembers}"
+                    th:text="${staffmember.getFirstName() + ' ' + staffmember.getSurName()}"
+                    th:value="${staffmemberStat.index}"/>
+        </select>
+    </p>
+
+    <input type="submit" value="Confirm attraction" name="confirmattraction"/>
+    <p>
+        <a href="/">Back to home page</a>
+    </p>
+</form>
+</body>
+</html>

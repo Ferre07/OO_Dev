@@ -1,0 +1,9 @@
+-------------------------------------------------------------------------------
+Test set: tm.itbachelors.projecttclassiccars.StaffTests
+-------------------------------------------------------------------------------
+Tests run: 1, Failures: 0, Errors: 1, Skipped: 0, Time elapsed: 0.004 s <<< FAILURE! - in tm.itbachelors.projecttclassiccars.StaffTests
+tm.itbachelors.projecttclassiccars.StaffTests  Time elapsed: 0.004 s  <<< ERROR!
+org.springframework.beans.factory.BeanDefinitionStoreException: Failed to read candidate component class: file [C:\Scripts\project Classic Cars\target\test-classes\tm\itbachelors\projecttclassiccars\CarTests.class]; nested exception is org.springframework.core.NestedIOException: ASM ClassReader failed to parse class file - probably due to a new Java class file version that isn't supported yet: file [C:\Scripts\project Classic Cars\target\test-classes\tm\itbachelors\projecttclassiccars\CarTests.class]; nested exception is java.lang.IllegalArgumentException: Unsupported class file major version 61
+Caused by: org.springframework.core.NestedIOException: ASM ClassReader failed to parse class file - probably due to a new Java class file version that isn't supported yet: file [C:\Scripts\project Classic Cars\target\test-classes\tm\itbachelors\projecttclassiccars\CarTests.class]; nested exception is java.lang.IllegalArgumentException: Unsupported class file major version 61
+Caused by: java.lang.IllegalArgumentException: Unsupported class file major version 61
+
