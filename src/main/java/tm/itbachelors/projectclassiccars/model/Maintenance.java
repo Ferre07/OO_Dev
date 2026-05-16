@@ -19,6 +19,12 @@ public class Maintenance {
         this.duration = duration;
     }
 
+    public Maintenance(String type, int duration, double hourlyRate) {
+        this.type = type;
+        this.duration = duration;
+        this.hourlyRate = hourlyRate;
+    }
+
     public String getType() {
         return type;
     }

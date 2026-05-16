@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+    <title>New Owner</title>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/water.css@2/out/water.css">
+</head>
+<body>
+<!-- Ferre Goovaerts r1092398-->
+<h2>Register a new owner</h2>
+<form action="/confirmowner" method="post">
+    <p><label for="firstName">first name</label>
+        <input type="text" name="firstName" id="firstName">
+    </p>
+    <p><label for="surName">Surname</label>
+        <input type="text" name="surName" id="surName">
+    </p>
+    <p><label for="yearOfBirth">Year of birth</label>
+        <input type="text" name="yearOfBirth" id="yearOfBirth">
+    </p>
+    <p>
+        <input type="submit" value="Continue without car code">
+    </p>
+</form>
+
+<a href="/">Home</a>
+
+</body>
+</html>

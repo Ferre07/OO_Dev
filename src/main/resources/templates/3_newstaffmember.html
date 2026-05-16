@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+  <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+  <title>New Staff Member</title>
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/water.css@2/out/water.css">
+</head>
+<body>
+<!-- Ferre Goovaerts r1092398-->
+<h2>Register a new staff member</h2>
+<form action="/confirmstaffmember" method="post">
+  <p>
+    <label for="firstName">first name</label>
+    <input type="text" name="firstName" id="firstName">
+  </p>
+  <p>
+    <label for="surName">surname</label>
+    <input type="text" name="surName" id="surName">
+  </p>
+  <p>
+    <label for="startDate">Employed since (dd/mm/yyyy)</label>
+    <input type="text" name="startDate" id="startDate">
+  </p>
+  <p>
+    <input type="checkbox" name="senior" value="senior" id="senior">
+    <label for="senior">Senior staff member?</label>
+  </p>
+  <p>
+    <input type="submit" value="Confirm staff member">
+  </p>
+</form>
+<a href="/">Home</a>
+</body>
+</html>

@@ -1,5 +1,9 @@
 package tm.itbachelors.projectclassiccars.controller;
 
+// Ferre Goovaerts r1092398
+
+
+
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.RequestMapping;
@@ -10,15 +14,65 @@ import java.time.LocalDate;
 import java.time.format.DateTimeFormatter;
 import java.util.ArrayList;
 
+import tm.itbachelors.projectclassiccars.model.*;
+
 @Controller
 public class MainController {
-//    private ArrayList<Staff> staffArrayList;
-//    private ArrayList<Owner> ownerArrayList;
-//    private ArrayList<Car> carArrayList;
 
     @RequestMapping("/index")
     public String index() {
         return "index";
+    }
+    @RequestMapping("/newowner")
+    public String newOwner(){
+        return "1_newowner";
+    }
+
+    @RequestMapping("/confirmowner")
+    public String confirmOwner(HttpServletRequest request, Model model){
+        String firstName = request.getParameter("firstName");
+        String surName = request.getParameter("surName");
+        int yearOfBirth = Integer.parseInt(request.getParameter("yearOfBirth"));
+
+        Owner owner = new Owner(firstName, surName);
+        owner.setYearOfBirth(yearOfBirth);
+        model.addAttribute("owner", owner);
+        return "2_ownerdetails";
+    }
+    @RequestMapping("/newstaffmember")
+    public String newStaffMember() {
+        return "3_newstaffmember";
+    }
+
+    // Step 2: User fills in the form and clicks "Confirm staff member"
+    @RequestMapping("/confirmstaffmember")
+    public String confirmStaffMember(HttpServletRequest request, Model model) {
+        // Get values from the form
+        String firstName = request.getParameter("firstName");
+        String surName = request.getParameter("surName");
+        String startDateString = request.getParameter("startDate");
+
+        // Convert the date string "dd/MM/yyyy" to a LocalDate
+        // DateTimeFormatter from lesson 4a
+        DateTimeFormatter dtf = DateTimeFormatter.ofPattern("dd/MM/yyyy");
+        LocalDate startDate = LocalDate.parse(startDateString, dtf);
+
+        // Create a new Staff object
+        Staff staff = new Staff(firstName, surName);
+        staff.setStartDate(startDate);
+
+        // Checkbox: if checked, request.getParameter returns "senior"
+        // If NOT checked, it returns null
+        String seniorValue = request.getParameter("senior");
+        if (seniorValue != null) {
+            staff.setSenior(true);
+        }
+
+        // Send the staff object to the next page
+        model.addAttribute("staffMember", staff);
+
+        // Go to 4_staffdetails.html
+        return "4_staffdetails";
     }
 
 

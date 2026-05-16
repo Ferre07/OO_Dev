@@ -2,18 +2,13 @@
 <html lang="en" xmlns:th="http://www.thymeleaf.org">
 <head>
     <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
-    <title>Classic cars start</title>
+    <title>Owner Details</title>
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/water.css@2/out/water.css">
-
 </head>
 <body>
-<!-- Ferre r1092398-->
-
-<h1>Classic Cars</h1>
-<p>By Ferre Goovaerts</p>
-<hr/>
-<p><a href="/newowner">New owner</a></p>
-<p><a href="/newstaffmember">New staff member</a></p>
+<!-- Ferre Goovaertsf r1092398-->
+<h3 th:text="'Welcome ' + ${owner}"></h3>
+<a href="/"></a>
 
 </body>
 </html>
