@@ -2,13 +2,14 @@
 <html lang="en" xmlns:th="http://www.thymeleaf.org">
 <head>
     <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
-    <title>Owner Details</title>
+    <title>Error</title>
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/water.css@2/out/water.css">
 </head>
 <body>
-<!-- Ferre Goovaertsf r1092398-->
-<h3 th:text="'Welcome ' + ${owner}"></h3>
-<a href="/">Home</a>
+    <!-- Ferre Goovaerts r1092398-->
+    <h1 th:text="${errormessage}">An error occured</h1>
+    <a href="/">Home</a>
+
 
 </body>
 </html>

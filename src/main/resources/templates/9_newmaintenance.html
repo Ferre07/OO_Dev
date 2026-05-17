@@ -20,7 +20,24 @@
             <span id="rateDisplay">25</span>
         </p>
 
+        <select name="carIndex">
+            <option value="-1">For which car?</option>
+            <option th:each="car : ${cars}"
+                    th:text="${car.getName()}"
+                    th:value="${carStat.index}"
+            ></option>
+        </select>
+        <select name="staffIndex">
+            <option value="-1">Who is responsible</option>
+            <option th:each="staff : ${staffMembers}"
+                    th:text="${staff.getFirstName() + ' ' + staff.getSurName()}"
+                    th:value="${staffStat.index}"
+            ></option>
+        </select>
+        <p><input type="submit" value="Confirm maintenance"></p>
+
     </form>
+    <a href="/">Home</a>
 
 </body>
 </html>

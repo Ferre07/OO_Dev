@@ -9,7 +9,7 @@
     <!--Ferre Goovaerts r1092398-->
     <h3>Our owners:</h3>
     <ol>
-        <li th:each="Owner : ${owners}">
+        <li th:each="owner : ${owners}">
             <span th:text="${owner.getFirstName() + ' ' + owner.getSurName()}"></span>
             <ul>
                 <li th:text="'year of birth: ' + ${owner.getYearOfBirth()}"></li>

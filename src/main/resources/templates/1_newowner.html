@@ -19,9 +19,10 @@
         <input type="text" name="yearOfBirth" id="yearOfBirth">
     </p>
     <select name="carIndex">
+        <option value="-1">Select a car</option>
         <option th:each="car : ${cars}"
                 th:text="${car.getName()}"
-                th:value="$carStat.index}"
+                th:value="${carStat.index}"
         ></option>
     </select>
 
