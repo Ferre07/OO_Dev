@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+    <title>List owners</title>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/water.css@2/out/water.css">
+</head>
+<body>
+    <!--Ferre Goovaerts r1092398-->
+    <h3>Our owners:</h3>
+    <ol>
+        <li th:each="Owner : ${owners}">
+            <span th:text="${owner.getFirstName() + ' ' + owner.getSurName()}"></span>
+            <ul>
+                <li th:text="'year of birth: ' + ${owner.getYearOfBirth()}"></li>
+                <li th:text="'car code: ' + ${owner.getCarCode()}"></li>
+                <li>Wish list:
+                    <ul>
+                        <li th:each="wish: ${owner.getWishList()}" th:text="${wish}"></li>
+                    </ul>
+                </li>
+            </ul>
+        </li>
+    </ol>
+    <a href="/">Home</a>
+
+</body>
+</html>

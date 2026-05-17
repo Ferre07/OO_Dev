@@ -1,0 +1,18 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+  <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+  <title>List of cars</title>
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/water.css@2/out/water.css">
+</head>
+<body>
+  <!-- Ferre Goovaerts r1092398-->
+  <h3>Cars (and number of maintenances</h3>
+  <ul>
+    <li th:each="car : ${cars}">
+      <a th:href="@{/cardetails(carIndex=${carStat.index})}" th:text="${car.getName() + ' (' + car.getNumberOfMaintenances() + ')'}"></a>
+    </li>
+  </ul>
+  <a href="/">Home</a>
+</body>
+</html>

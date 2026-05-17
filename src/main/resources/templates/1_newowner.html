@@ -18,6 +18,14 @@
     <p><label for="yearOfBirth">Year of birth</label>
         <input type="text" name="yearOfBirth" id="yearOfBirth">
     </p>
+    <select name="carIndex">
+        <option th:each="car : ${cars}"
+                th:text="${car.getName()}"
+                th:value="$carStat.index}"
+        ></option>
+    </select>
+
+    
     <p>
         <input type="submit" value="Continue without car code">
     </p>
