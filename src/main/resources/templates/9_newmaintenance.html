@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+    <title>New Maintenance</title>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/water.css@2/out/water.css">
+</head>
+<body>
+    <!-- Ferre Goovaerts r1092398-->
+    <h2>New maintenance</h2>
+    <form action="/confirmmaintenance" method="post">
+        <p><label for="type">Type of maintenance</label>
+            <input type="text" name="type" id="type">
+        </p>
+        <p><label for="duration">Duration (in minutes)</label>
+            <input type="number" name="duration" id="duration" min="0" max="600" value="60">
+        </p>
+        <p><label for="hourlyRate">Hourly rate:</label>
+            <input type="range" name="hourlyRate" id="hourlyRate" min="0" max="100" value="25" oninput="document.getElementById('rateDisplay').textContent = this.value">
+            <span id="rateDisplay">25</span>
+        </p>
+
+    </form>
+
+</body>
+</html>
